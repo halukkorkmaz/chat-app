@@ -11,6 +11,8 @@ const usersRouter = require('./routes/users');
 
 const app = express();
 
+const db = require('./helpers/db')();
+
 console.log(process.env.NAME); // Terminalde çıktı
 
 // view engine setup
