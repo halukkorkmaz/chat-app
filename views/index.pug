@@ -1,5 +1,20 @@
 extends layout
 
+append stylesheets
+  link(rel='stylesheet', href='/stylesheets/index.css')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css')
+
+
 block content
-  h1= title
-  p Welcome to #{title}
+  div(ng-controller="indexController")
+    .modal
+      .modal__inner
+        .modal__header
+          h2 Welcome, please login.
+        .modal__footer
+          a(href='#')
+            i.fa.fa-google-plus(aria-hidden='true')
+            | Login with Google+
+
+append javascripts
+  script(src="/javascripts/controller/indexController.js")

@@ -1,0 +1,17 @@
+{
+  "name": "chat-app",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Abdulhalik <abdlhlkkrkmz@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "chat",
+    "nodejs"
+  ],
+  "homepage": "https://github.com/Abdulhalik/chat-app",
+  "dependencies": {
+    "angular": "^1.7.9"
+  }
+}
