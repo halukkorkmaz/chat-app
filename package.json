@@ -7,6 +7,7 @@
     "start:dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "connect-redis": "^4.0.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
@@ -21,7 +22,8 @@
     "passport-github": "^1.1.0",
     "passport-google-oauth": "^2.0.0",
     "passport-google-oauth20": "^2.0.0",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "redis": "^2.8.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.1"

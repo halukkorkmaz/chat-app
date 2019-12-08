@@ -2,7 +2,7 @@
 
 # How to install
 ## Clone repo and install dependencies
-`git clone https://github.com/Abdulhalik/chat-app`
+`git clone https://github.com/Abdulhalik/chat-app.git`
 
 `cd chat-app`
 

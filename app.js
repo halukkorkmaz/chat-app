@@ -5,6 +5,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
+//const redisStore = require('./helpers/redisStore');
+const redis = require('redis');
+const redisStore = require('connect-redis')(session);
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -20,8 +23,6 @@ const db = require('./helpers/db')();
 // middlewares
 const isAuthenticated = require('./middleware/isAuthenticated');
 
-console.log(process.env.NAME); // Terminalde çıktı
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -33,8 +34,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
+const redisClient = redis.createClient();
+
 //express-session
 app.use(session({
+  store: new redisStore({ client: redisClient}),
   secret: process.env.SESSION_SECRET_KEY,
   resave: false,
   saveUninitialized: true,
