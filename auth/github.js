@@ -10,18 +10,26 @@ passport.use(new GitHubStrategy({
         callbackURL: "http://localhost:3000/auth/github/callback"
     },
     function(accessToken, refreshToken, profile, cb) {
-        User.findOrCreate({ githubId: profile.id }, function (err, user) {
+        const data = profile._json;
+        console.log(data);
+
+        User.findOrCreate({
+            githubId: profile.id
+        }, {
+            name: data.login,
+            profilePhotoUrl: data.avatar_url
+        }, function (err, user) {
             return cb(err, user);
         });
     }
 ));
 
-/*passport.serializeUser((user, done) => {
+passport.serializeUser((user, done) => {
     done(null, user);
 });
 
 passport.deserializeUser((user, done) => {
     done(null, user);
-});*/
+});
 
 module.exports = passport;

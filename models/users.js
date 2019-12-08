@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const findOrCreate = require('mongoose-find-or-create')
 
 const userSchema = new Schema({
-    googleId: {
+    githubId: {
         type: String,
         unique: true
     },
