@@ -34,8 +34,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
-const redisClient = redis.createClient();
 
+const redisClient = redis.createClient();
 //express-session
 app.use(session({
   store: new redisStore({ client: redisClient}),
