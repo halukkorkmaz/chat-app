@@ -79,7 +79,7 @@ body .modal .modal__inner .modal__footer a {
     line-height: 1;
     text-decoration: none;
     text-align: center;
-    background: #e04932;
+    background: #333;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
@@ -88,7 +88,7 @@ body .modal .modal__inner .modal__footer a .fa {
     margin: 0 10px 0 0;
 }
 body .modal .modal__inner .modal__footer a:hover {
-    background: #f24a32;
+    background: #504D4D;
 }
 body .modal .modal__inner .modal__footer a.disabled {
     background: #EFEFEF;

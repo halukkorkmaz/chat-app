@@ -1,0 +1,10 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET chat home page. */
+router.get('/', function(req, res, next) {
+    console.log(req.user);
+    res.render('chat', { user: req.user }); // render ederken chat.pug'ı render edecek.
+});
+
+module.exports = router;

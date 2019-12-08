@@ -11,11 +11,12 @@ passport.use(new GitHubStrategy({
     },
     function(accessToken, refreshToken, profile, cb) {
         const data = profile._json;
-        console.log(data);
+        //console.log(data);
 
-        User.findOrCreate({
+        User.findOrCreate({ // database için user nesnesi yoksa kaydet yoksa bul (find-or-create lib)
             githubId: profile.id
         }, {
+            // User için hangi bilgileri saklayacaksın
             name: data.login,
             profilePhotoUrl: data.avatar_url
         }, function (err, user) {
