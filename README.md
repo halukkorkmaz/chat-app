@@ -1,4 +1,4 @@
-# TheChatApp
+# TheChatApp (Development in progress.)
 
 # How to install
 ## Clone repo and install dependencies
